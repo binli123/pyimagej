@@ -1537,6 +1537,9 @@ def _create_jvm(
     if add_legacy:
         sj.config.endpoints.append("net.imagej:imagej-legacy:MANAGED")
 
+    # Add additional ImageJ endpoints specific to PyImageJ
+    sj.config.endpoints.append('net.imglib2:labeling:0.2.2')
+
     # Restore any pre-existing endpoints, after ImageJ2's
     sj.config.endpoints.extend(original_endpoints)
 
